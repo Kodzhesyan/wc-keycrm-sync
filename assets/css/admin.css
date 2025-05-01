@@ -1,0 +1,87 @@
+.wc-keycrm-settings-wrap {
+    max-width: 800px;
+    margin: 20px 0;
+}
+
+.wc-keycrm-settings-wrap .form-table {
+    margin-top: 20px;
+}
+
+.wc-keycrm-settings-wrap .form-table th {
+    width: 200px;
+    padding: 20px 10px 20px 0;
+}
+
+.wc-keycrm-settings-wrap .form-table td {
+    padding: 20px 10px;
+}
+
+.wc-keycrm-settings-wrap .form-table input[type="text"],
+.wc-keycrm-settings-wrap .form-table input[type="number"] {
+    width: 300px;
+}
+
+.wc-keycrm-settings-wrap .description {
+    color: #666;
+    font-style: italic;
+    margin-top: 8px;
+}
+
+.wc-keycrm-settings-wrap .notice {
+    margin: 20px 0;
+    padding: 10px;
+}
+
+.wc-keycrm-settings-wrap .notice p {
+    margin: 0.5em 0;
+    padding: 2px;
+}
+
+.wc-keycrm-settings-wrap .shipping-mapping-table {
+    border: 1px solid #ccd0d4;
+    border-spacing: 0;
+    width: 100%;
+    max-width: 900px;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.wc-keycrm-settings-wrap .shipping-mapping-table thead th {
+    background: #f8f9fa;
+    border-bottom: 1px solid #ccd0d4;
+    padding: 12px 15px;
+    font-weight: 600;
+    text-align: left;
+}
+
+.wc-keycrm-settings-wrap .shipping-mapping-table tbody td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #f0f0f1;
+    vertical-align: middle;
+}
+
+.wc-keycrm-settings-wrap .shipping-mapping-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.wc-keycrm-settings-wrap .shipping-mapping-table .method-title {
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.wc-keycrm-settings-wrap .shipping-mapping-table .method-info {
+    color: #666;
+    font-size: 12px;
+    margin: 0;
+}
+
+.wc-keycrm-settings-wrap .shipping-mapping-table input[type="number"] {
+    width: 80px;
+}
+
+.wc-keycrm-settings-wrap .shipping-mapping-table .recommended {
+    color: #2271b1;
+    font-size: 12px;
+    margin-top: 4px;
+}

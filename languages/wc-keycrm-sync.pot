@@ -1,0 +1,77 @@
+# Copyright (C) 2025 Your Name
+# This file is distributed under the GPL v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: WooCommerce KeyCRM Integration 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wc-keycrm-sync\n"
+"POT-Creation-Date: 2025-05-01\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: includes/admin/class-wc-keycrm-admin.php:24
+msgid "KeyCRM Settings"
+msgstr ""
+
+#: includes/admin/class-wc-keycrm-admin.php:25
+msgid "KeyCRM Sync"
+msgstr ""
+
+#: includes/admin/class-wc-keycrm-admin.php:77
+msgid "API Key"
+msgstr ""
+
+#: includes/admin/class-wc-keycrm-admin.php:83
+msgid "Enter your KeyCRM API key. You can find it in your KeyCRM account settings."
+msgstr ""
+
+#: includes/admin/class-wc-keycrm-admin.php:90
+msgid "Source ID"
+msgstr ""
+
+#: includes/admin/class-wc-keycrm-admin.php:96
+msgid "Enter your KeyCRM source ID for orders. This helps track where orders come from."
+msgstr ""
+
+#: includes/admin/class-wc-keycrm-admin.php:103
+msgid "Debug Mode"
+msgstr ""
+
+#: includes/admin/class-wc-keycrm-admin.php:109
+msgid "Enable debug logging"
+msgstr ""
+
+#: includes/admin/class-wc-keycrm-admin.php:112
+msgid "When enabled, debug information will be logged to the WordPress debug log."
+msgstr ""
+
+#: includes/admin/class-wc-keycrm-admin.php:126
+msgid "Settings Saved"
+msgstr ""
+
+#: includes/class-wc-keycrm-api.php:46
+msgid "KeyCRM API key is not set"
+msgstr ""
+
+#: includes/class-wc-keycrm-api.php:191
+msgid "KeyCRM API error (code %d): %s"
+msgstr ""
+
+#: wc-keycrm-sync.php:57
+msgid "KeyCRM Sync requires WooCommerce to be installed and activated. You can download %s here."
+msgstr ""
+
+#: wc-keycrm-sync.php:64
+msgid "KeyCRM Sync requires WooCommerce version %s or higher."
+msgstr ""
+
+#: wc-keycrm-sync.php:189
+msgid "Failed to sync with KeyCRM: %s"
+msgstr ""
+
+#: wc-keycrm-sync.php:196
+msgid "Order synced with KeyCRM successfully"
+msgstr ""
