@@ -22,7 +22,7 @@ class WC_KeyCRM_Admin {
      */
     public function add_admin_menu() {
         add_menu_page(
-            __('KeyCRM Settings', 'wc-keycrm-sync'),
+            __('Налаштування KeyCRM', 'wc-keycrm-sync'),
             __('KeyCRM Sync', 'wc-keycrm-sync'),
             'manage_options',
             'wc-keycrm-settings',
@@ -143,7 +143,7 @@ class WC_KeyCRM_Admin {
             add_settings_error(
                 'wc_keycrm_messages',
                 'wc_keycrm_message',
-                __('Settings Saved', 'wc-keycrm-sync'),
+                __('Налаштування збережено', 'wc-keycrm-sync'),
                 'updated'
             );
         }
@@ -152,11 +152,11 @@ class WC_KeyCRM_Admin {
         $payment_gateways = WC()->payment_gateways->payment_gateways();
         $saved_payment_mappings = get_option('wc_keycrm_payment_mappings', array());
 
-        // Получаем все методы доставки WooCommerce
+        // Отримуємо всі методи доставки WooCommerce
         $shipping_methods = array();
         $zones = WC_Shipping_Zones::get_zones();
         
-        // Добавляем методы из зон доставки
+        // Додаємо методи з зон доставки
         foreach ($zones as $zone_data) {
             $zone = new WC_Shipping_Zone($zone_data['id']);
             $methods = $zone->get_shipping_methods();
@@ -170,13 +170,13 @@ class WC_KeyCRM_Admin {
             }
         }
         
-        // Добавляем глобальные методы доставки
+        // Додаємо глобальні методи доставки
         $global_zone = new WC_Shipping_Zone(0);
         $global_methods = $global_zone->get_shipping_methods();
         foreach ($global_methods as $method) {
             $method_id = $method->get_instance_id();
             $shipping_methods[$method_id] = array(
-                'title' => __('Rest of the World', 'wc-keycrm-sync') . ' - ' . $method->get_title(),
+                'title' => __('Решта світу', 'wc-keycrm-sync') . ' - ' . $method->get_title(),
                 'id' => $method->id,
                 'instance_id' => $method_id
             );
@@ -196,7 +196,7 @@ class WC_KeyCRM_Admin {
                 <table class="form-table" role="presentation">
                     <tr>
                         <th scope="row">
-                            <label for="wc_keycrm_api_key"><?php esc_html_e('API Key', 'wc-keycrm-sync'); ?></label>
+                            <label for="wc_keycrm_api_key"><?php esc_html_e('API Ключ', 'wc-keycrm-sync'); ?></label>
                         </th>
                         <td>
                             <input type="text" 
@@ -206,13 +206,13 @@ class WC_KeyCRM_Admin {
                                    class="regular-text"
                                    required>
                             <p class="description">
-                                <?php esc_html_e('Enter your KeyCRM API key. You can find it in your KeyCRM account settings.', 'wc-keycrm-sync'); ?>
+                                <?php esc_html_e('Введіть ваш API ключ KeyCRM. Ви можете знайти його в налаштуваннях вашого акаунту KeyCRM.', 'wc-keycrm-sync'); ?>
                             </p>
                         </td>
                     </tr>
                     <tr>
                         <th scope="row">
-                            <label for="wc_keycrm_source_id"><?php esc_html_e('Source ID', 'wc-keycrm-sync'); ?></label>
+                            <label for="wc_keycrm_source_id"><?php esc_html_e('ID Джерела', 'wc-keycrm-sync'); ?></label>
                         </th>
                         <td>
                             <input type="number" 
@@ -223,13 +223,13 @@ class WC_KeyCRM_Admin {
                                    min="1"
                                    required>
                             <p class="description">
-                                <?php esc_html_e('Enter your KeyCRM source ID for orders. This helps track where orders come from.', 'wc-keycrm-sync'); ?>
+                                <?php esc_html_e('Введіть ID джерела KeyCRM для замовлень. Це допомагає відстежувати, звідки надходять замовлення.', 'wc-keycrm-sync'); ?>
                             </p>
                         </td>
                     </tr>
                     <tr>
                         <th scope="row">
-                            <?php esc_html_e('Debug Mode', 'wc-keycrm-sync'); ?>
+                            <?php esc_html_e('Режим налагодження', 'wc-keycrm-sync'); ?>
                         </th>
                         <td>
                             <fieldset>
@@ -239,24 +239,24 @@ class WC_KeyCRM_Admin {
                                            name="wc_keycrm_debug_mode" 
                                            value="1" 
                                            <?php checked(1, get_option('wc_keycrm_debug_mode', 0)); ?>>
-                                    <?php esc_html_e('Enable debug logging', 'wc-keycrm-sync'); ?>
+                                    <?php esc_html_e('Увімкнути журнал налагодження', 'wc-keycrm-sync'); ?>
                                 </label>
                                 <p class="description">
-                                    <?php esc_html_e('When enabled, debug information will be logged to the WordPress debug log.', 'wc-keycrm-sync'); ?>
+                                    <?php esc_html_e('Коли увімкнено, інформація про налагодження буде записуватися в журнал налагодження WordPress.', 'wc-keycrm-sync'); ?>
                                 </p>
                             </fieldset>
                         </td>
                     </tr>
                     <tr valign="top">
                         <th scope="row">
-                            <?php _e('Payment Methods Mapping', 'wc-keycrm-sync'); ?>
+                            <?php _e('Відповідність способів оплати', 'wc-keycrm-sync'); ?>
                         </th>
                         <td>
                             <table class="shipping-mapping-table">
                                 <thead>
                                     <tr>
-                                        <th><?php _e('Payment Method', 'wc-keycrm-sync'); ?></th>
-                                        <th><?php _e('KeyCRM Payment Method ID', 'wc-keycrm-sync'); ?></th>
+                                        <th><?php _e('Спосіб оплати', 'wc-keycrm-sync'); ?></th>
+                                        <th><?php _e('ID способу оплати KeyCRM', 'wc-keycrm-sync'); ?></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -270,7 +270,7 @@ class WC_KeyCRM_Admin {
                                                 <p class="method-info">
                                                     <?php 
                                                     printf(
-                                                        __('Gateway ID: %s', 'wc-keycrm-sync'),
+                                                        __('ID шлюзу: %s', 'wc-keycrm-sync'),
                                                         $gateway->id
                                                     ); 
                                                     ?>
@@ -284,7 +284,7 @@ class WC_KeyCRM_Admin {
                                                        class="small-text">
                                                 <?php if ($gateway->id === 'cod') : ?>
                                                     <p class="recommended">
-                                                        <?php _e('Recommended ID: 1 (Cash on Delivery)', 'wc-keycrm-sync'); ?>
+                                                        <?php _e('Рекомендований ID: 1 (Накладений платіж)', 'wc-keycrm-sync'); ?>
                                                     </p>
                                                 <?php endif; ?>
                                             </td>
@@ -293,20 +293,20 @@ class WC_KeyCRM_Admin {
                                 </tbody>
                             </table>
                             <p class="description">
-                                <?php _e('Map WooCommerce payment methods to KeyCRM payment method IDs.', 'wc-keycrm-sync'); ?>
+                                <?php _e('Зіставте способи оплати WooCommerce з ID способів оплати KeyCRM.', 'wc-keycrm-sync'); ?>
                             </p>
                         </td>
                     </tr>
                     <tr valign="top">
                         <th scope="row">
-                            <?php _e('Shipping Methods Mapping', 'wc-keycrm-sync'); ?>
+                            <?php _e('Відповідність способів доставки', 'wc-keycrm-sync'); ?>
                         </th>
                         <td>
                             <table class="shipping-mapping-table">
                                 <thead>
                                     <tr>
-                                        <th><?php _e('Shipping Zone and Method', 'wc-keycrm-sync'); ?></th>
-                                        <th><?php _e('KeyCRM Delivery Service ID', 'wc-keycrm-sync'); ?></th>
+                                        <th><?php _e('Зона та спосіб доставки', 'wc-keycrm-sync'); ?></th>
+                                        <th><?php _e('ID служби доставки KeyCRM', 'wc-keycrm-sync'); ?></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -319,7 +319,7 @@ class WC_KeyCRM_Admin {
                                                 <p class="method-info">
                                                     <?php 
                                                     printf(
-                                                        __('Method: %s (Instance ID: %s)', 'wc-keycrm-sync'),
+                                                        __('Метод: %s (ID екземпляру: %s)', 'wc-keycrm-sync'),
                                                         $method['id'],
                                                         $instance_id
                                                     ); 
@@ -334,11 +334,11 @@ class WC_KeyCRM_Admin {
                                                        class="small-text">
                                                 <?php if ($method['id'] === 'nova_poshta_shipping') : ?>
                                                     <p class="recommended">
-                                                        <?php _e('Recommended ID: 1 (Nova Poshta)', 'wc-keycrm-sync'); ?>
+                                                        <?php _e('Рекомендований ID: 1 (Нова Пошта)', 'wc-keycrm-sync'); ?>
                                                     </p>
                                                 <?php elseif ($method['id'] === 'ukrposhta_shipping') : ?>
                                                     <p class="recommended">
-                                                        <?php _e('Recommended ID: 2 (Ukrposhta)', 'wc-keycrm-sync'); ?>
+                                                        <?php _e('Рекомендований ID: 2 (Укрпошта)', 'wc-keycrm-sync'); ?>
                                                     </p>
                                                 <?php endif; ?>
                                             </td>
@@ -347,12 +347,12 @@ class WC_KeyCRM_Admin {
                                 </tbody>
                             </table>
                             <p class="description">
-                                <?php _e('Map WooCommerce shipping methods to KeyCRM delivery service IDs. Each shipping method instance can have its own mapping.', 'wc-keycrm-sync'); ?>
+                                <?php _e('Зіставте способи доставки WooCommerce з ID служб доставки KeyCRM. Кожен екземпляр способу доставки може мати власне зіставлення.', 'wc-keycrm-sync'); ?>
                             </p>
                         </td>
                     </tr>
                 </table>
-                <?php submit_button(); ?>
+                <?php submit_button(__('Зберегти зміни', 'wc-keycrm-sync')); ?>
             </form>
         </div>
         <?php

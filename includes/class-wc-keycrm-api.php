@@ -53,7 +53,7 @@ class WC_KeyCRM_API {
      */
     public function send_order($order) {
         if (!$this->api_key) {
-            return new WP_Error('missing_api_key', __('KeyCRM API key is not set', 'wc-keycrm-sync'));
+            return new WP_Error('missing_api_key', __('API ключ KeyCRM не встановлено', 'wc-keycrm-sync'));
         }
 
         try {
@@ -167,12 +167,17 @@ class WC_KeyCRM_API {
                 continue;
             }
 
+            // Get product image URL
+            $image_id = $product->get_image_id();
+            $image_url = $image_id ? wp_get_attachment_image_url($image_id, 'full') : '';
+
             $items[] = [
                 'sku' => $product->get_sku(),
                 'name' => $item->get_name(),
                 'price' => $item->get_total() / $item->get_quantity(),
                 'purchased_price' => $product->get_meta('_purchase_price', true),
-                'quantity' => $item->get_quantity()
+                'quantity' => $item->get_quantity(),
+                'image_url' => $image_url
             ];
         }
 
@@ -235,7 +240,7 @@ class WC_KeyCRM_API {
      */
     private function log_debug($message) {
         if ($this->debug_mode) {
-            error_log('KeyCRM Debug: ' . $message);
+            error_log('KeyCRM Налагодження: ' . $message);
         }
     }
 
@@ -245,6 +250,6 @@ class WC_KeyCRM_API {
      * @param string $message Error message
      */
     private function log_error($message) {
-        error_log('KeyCRM Error: ' . $message);
+        error_log('KeyCRM Помилка: ' . $message);
     }
 }

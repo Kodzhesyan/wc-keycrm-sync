@@ -2,7 +2,7 @@
 /**
  * Plugin Name: WooCommerce KeyCRM Integration
  * Plugin URI: https://example.com/plugins/wc-keycrm-sync
- * Description: Syncs WooCommerce orders with KeyCRM
+ * Description: Синхронізація замовлень WooCommerce з KeyCRM
  * Version: 1.0.0
  * Requires at least: 5.8
  * Requires PHP: 7.4
@@ -59,13 +59,13 @@ function wc_keycrm_sync_dependency_notice() {
     if (!class_exists('WooCommerce')) {
         $message = sprintf(
             /* translators: %s: WooCommerce URL */
-            __('KeyCRM Sync requires WooCommerce to be installed and activated. You can download %s here.', 'wc-keycrm-sync'),
-            '<a href="https://wordpress.org/plugins/woocommerce/" target="_blank">WooCommerce</a>'
+            __('Для роботи KeyCRM Sync потрібно встановити та активувати WooCommerce. Ви можете завантажити його %s.', 'wc-keycrm-sync'),
+            '<a href="https://wordpress.org/plugins/woocommerce/" target="_blank">тут</a>'
         );
     } else {
         $message = sprintf(
             /* translators: %s: WooCommerce version */
-            __('KeyCRM Sync requires WooCommerce version %s or higher.', 'wc-keycrm-sync'),
+            __('Для роботи KeyCRM Sync потрібна версія WooCommerce %s або вище.', 'wc-keycrm-sync'),
             WC_KEYCRM_SYNC_MIN_WC_VERSION
         );
     }
@@ -164,14 +164,14 @@ final class WC_KeyCRM_Sync {
             $order->add_order_note(
                 sprintf(
                     /* translators: %s: error message */
-                    __('Failed to sync with KeyCRM: %s', 'wc-keycrm-sync'),
+                    __('Помилка синхронізації з KeyCRM: %s', 'wc-keycrm-sync'),
                     $result->get_error_message()
                 )
             );
             return;
         }
 
-        $order->add_order_note(__('Order synced with KeyCRM successfully', 'wc-keycrm-sync'));
+        $order->add_order_note(__('Замовлення успішно синхронізовано з KeyCRM', 'wc-keycrm-sync'));
         $order->update_meta_data('_keycrm_synced', 'yes');
         $order->save();
     }
