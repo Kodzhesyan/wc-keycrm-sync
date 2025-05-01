@@ -124,7 +124,7 @@ class WC_KeyCRM_API {
                 'shipping_receive_point' => $order->get_shipping_address_1(),
                 'recipient_full_name' => $recipient_full_name,
                 'recipient_phone' => $this->format_phone($order->get_billing_phone()),
-                'warehouse_ref' => $order->get_meta('wcus_warehouse_ref', true),
+                'warehouse_ref' => $this->get_warehouse_ref($order),
                 'shipping_date' => $order->get_date_created()->format('Y-m-d')
             ],
             'payments' => [$payment_data],
@@ -182,6 +182,47 @@ class WC_KeyCRM_API {
         }
 
         return $items;
+    }
+
+    /**
+     * Get warehouse reference from order items metadata using WooCommerce API
+     *
+     * @param WC_Order $order Order object
+     * @return string
+     */
+    private function get_warehouse_ref($order) {
+        // Get all shipping items
+        $shipping_items = $order->get_items('shipping');
+        
+        if (!empty($shipping_items)) {
+            // Get first shipping item
+            $shipping_item = reset($shipping_items);
+            // Try to get warehouse ref from shipping item metadata
+            $warehouse_ref = $shipping_item->get_meta('wcus_warehouse_ref', true);
+            
+            if (!empty($warehouse_ref)) {
+                $this->log_debug('Found warehouse_ref in shipping item: ' . $warehouse_ref);
+                return $warehouse_ref;
+            }
+        }
+
+        // If not found in shipping, try order items
+        foreach ($order->get_items() as $item) {
+            // Get all metadata for debugging
+            if ($this->debug_mode) {
+                $all_meta = $item->get_meta_data();
+                $this->log_debug('Item #' . $item->get_id() . ' metadata: ' . print_r($all_meta, true));
+            }
+
+            $warehouse_ref = $item->get_meta('wcus_warehouse_ref', true);
+            if (!empty($warehouse_ref)) {
+                $this->log_debug('Found warehouse_ref in order item: ' . $warehouse_ref);
+                return $warehouse_ref;
+            }
+        }
+
+        $this->log_debug('Warehouse ref not found in any items');
+        return '';
     }
 
     /**
