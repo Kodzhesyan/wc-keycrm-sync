@@ -106,7 +106,8 @@ class WC_KeyCRM_API {
 
         $data = [
             'source_id' => $this->source_id,
-            'external_id' => $order->get_id(),
+            'source_uuid' => (string)$order->get_id(), // Используем ID заказа
+            //'external_id' => $order->get_id(),
             'buyer_comment' => $order->get_customer_note(), // Добавляем комментарий покупателя
             'buyer' => [
                 'full_name' => $order->get_formatted_billing_full_name(),
