@@ -282,11 +282,6 @@ class WC_KeyCRM_Admin {
                                                        value="<?php echo esc_attr(isset($saved_payment_mappings[$gateway->id]) ? $saved_payment_mappings[$gateway->id] : '2'); ?>"
                                                        min="1"
                                                        class="small-text">
-                                                <?php if ($gateway->id === 'cod') : ?>
-                                                    <p class="recommended">
-                                                        <?php _e('Рекомендований ID: 1 (Накладений платіж)', 'wc-keycrm-sync'); ?>
-                                                    </p>
-                                                <?php endif; ?>
                                             </td>
                                         </tr>
                                     <?php endforeach; ?>
@@ -332,15 +327,6 @@ class WC_KeyCRM_Admin {
                                                        value="<?php echo esc_attr(isset($saved_mappings[$instance_id]) ? $saved_mappings[$instance_id] : '1'); ?>"
                                                        min="1"
                                                        class="small-text">
-                                                <?php if ($method['id'] === 'nova_poshta_shipping') : ?>
-                                                    <p class="recommended">
-                                                        <?php _e('Рекомендований ID: 1 (Нова Пошта)', 'wc-keycrm-sync'); ?>
-                                                    </p>
-                                                <?php elseif ($method['id'] === 'ukrposhta_shipping') : ?>
-                                                    <p class="recommended">
-                                                        <?php _e('Рекомендований ID: 2 (Укрпошта)', 'wc-keycrm-sync'); ?>
-                                                    </p>
-                                                <?php endif; ?>
                                             </td>
                                         </tr>
                                     <?php endforeach; ?>
