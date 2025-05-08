@@ -1,0 +1,69 @@
+Initializing agent…
+[2K[1A[2K[G╭──────────────────────────────────────────────────────────────╮
+│ ● OpenAI Codex (research preview) v0.1.2504301751            │
+╰──────────────────────────────────────────────────────────────╯
+╭──────────────────────────────────────────────────────────────╮
+│ localhost session: a31fd13f1b034beab11b0bd17f8c7cd1          │
+│ ↳ workdir: ~/.../wp-content/plugins/wc-keycrm-sync           │
+│ ↳ model: gemini-2.5-flash-preview-04-17-thinking             │
+│ ↳ provider: gemini                                           │
+│ ↳ approval: suggest                                          │
+╰──────────────────────────────────────────────────────────────╯
+╭──────────────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+  try: explain this codebase to me | fix any build errors | are there any bugs
+   in my code?
+
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G╭──────────────────────────────────────────────────────────────╮
+│                                                              │
+●──────────────────────────────────────────────────────────────╯
+╭──────────────────────────────────────────────────────────────╮
+│ localhost session: a31fd13f1b034beab11b0bd17f8c7cd1          │
+│ ↳ workdir: ~/.../wp-content/plugins/wc-keycrm-sync           │
+│ ↳ model: gemini-2.5-flash-preview-04-17-thinking             │
+│ ↳ provider: gemini                                           │
+│ ↳ approval: suggest                                          │
+╰──────────────────────────────────────────────────────────────╯
+
+  ERROR Raw mode is not supported on the current process.stdin, which Ink uses
+       as input stream by default.
+       Read about how to prevent this error on
+       https://github.com/vadimdemedes/ink/#israwmodesupported
+
+ - Read about how to prevent this error on
+   https://github.com/vadimdemedes/ink/#israwmodesupported
+ -handleSetRawMod (file:///usr/lib/node_modules/@openai/codex/dist/cli.js:274:2
+                 020)
+ -  (file:///usr/lib/node_modules/@openai/codex/dist/cli.js:279:1151)
+ - W1 (file:///usr/lib/node_modules/@openai/codex/dist/cli.js:112:27748)
+ - b_e (file:///usr/lib/node_modules/@openai/codex/dist/cli.js:125:13588)
+ - D_e (file:///usr/lib/node_modules/@openai/codex/dist/cli.js:125:13331)
+ - S_e (file:///usr/lib/node_modules/@openai/codex/dist/cli.js:125:13237)
+ - C_e (file:///usr/lib/node_modules/@openai/codex/dist/cli.js:125:13113)
+ - EAe (file:///usr/lib/node_modules/@openai/codex/dist/cli.js:129:11795)
+ - id (file:///usr/lib/node_modules/@openai/codex/dist/cli.js:129:11449)
+ - rM (file:///usr/lib/node_modules/@openai/codex/dist/cli.js:129:5931)
+
+The above error occurred in the <HR> component:
+
+    at HR (file:///usr/lib/node_modules/@openai/codex/dist/cli.js:292:10519)
+    at ink-box
+    at file:///usr/lib/node_modules/@openai/codex/dist/cli.js:272:1837
+    at ink-box
+    at file:///usr/lib/node_modules/@openai/codex/dist/cli.js:272:1837
+    at lB (file:///usr/lib/node_modules/@openai/codex/dist/cli.js:559:737)
+    at fB (file:///usr/lib/node_modules/@openai/codex/dist/cli.js:559:14635)
+    at Gy (file:///usr/lib/node_modules/@openai/codex/dist/cli.js:274:482)
+
+React will try to recreate this component tree from scratch using the error boundary you provided, InternalApp.
+file:///usr/lib/node_modules/@openai/codex/dist/cli.js:490
+`);super({baseURL:o.baseURL,timeout:o.timeout??6e5,httpAgent:o.httpAgent,maxRetries:o.maxRetries,fetch:o.fetch}),this.completions=new r_(this),this.chat=new l1(this),this.embeddings=new n_(this),this.files=new Gf(this),this.images=new c_(this),this.audio=new kd(this),this.moderations=new d_(this),this.models=new Hf(this),this.fineTuning=new Eu(this),this.vectorStores=new Bl(this),this.beta=new hu(this),this.batches=new Lf(this),this.uploads=new Wf(this),this.responses=new Vf(this),this.evals=new Pd(this),this._options=o,this.apiKey=r,this.organization=n,this.project=a}defaultQuery(){return this._options.defaultQuery}defaultHeaders(t){return{...super.defaultHeaders(t),"OpenAI-Organization":this.organization,"OpenAI-Project":this.project,...this._options.defaultHeaders}}authHeaders(t){return{Authorization:`Bearer ${this.apiKey}`}}stringifyQuery(t){return uO(t,{arrayFormat:"brackets"})}};Pse=Nr;Nr.OpenAI=Pse;Nr.DEFAULT_TIMEOUT=6e5;Nr.OpenAIError=Kt;Nr.APIError=bi;Nr.APIConnectionError=i1;Nr.APIConnectionTimeoutError=gu;Nr.APIUserAbortError=ui;Nr.NotFoundError=Rh;Nr.ConflictError=Nh;Nr.RateLimitError=Oh;Nr.BadRequestError=Th;Nr.AuthenticationError=Ih;Nr.InternalServerError=Bh;Nr.PermissionDeniedError=wh;Nr.UnprocessableEntityError=xh;Nr.toFile=N7;Nr.fileFromPath=c4;Nr.Completions=r_;Nr.Chat=l1;Nr.ChatCompletionsPage=Ff;Nr.Embeddings=n_;Nr.Files=Gf;Nr.FileObjectsPage=o_;Nr.Images=c_;Nr.Audio=kd;Nr.Moderations=d_;Nr.Models=Hf;Nr.ModelsPage=u_;Nr.FineTuning=Eu;Nr.VectorStores=Bl;Nr.VectorStoresPage=p_;Nr.VectorStoreSearchResponsesPage=f_;Nr.Beta=hu;Nr.Batches=Lf;Nr.BatchesPage=Kg;Nr.Uploads=Wf;Nr.Responses=Vf;Nr.Evals=Pd;Nr.EvalListResponsesPage=i_;var Ec=Nr;var Qse=parseInt(process.env.OPENAI_RATE_LIMIT_RETRY_WAIT_MS||"500",10),Use=new Set,Gse=new Set,zse={type:"function",name:"shell",description:"Runs a shell command, and returns its output.",strict:!1,parameters:{type:"object",properties:{command:{type:"array",items:{type:"string"}},workdir:{type:"string",description:"The working directory for the command."},timeout:{type:"number",description:"The maximum time to wait for the command to complete in milliseconds."}},required:["command"],additionalProperties:!1}},dE=class{model;provider;instructions;approvalPolicy;config;additionalWritableRoots;disableResponseStorage;oai;onItem;onLoading;getCommandConfirmation;onLastResponseId;currentStream=null;generation=0;execAbortController=null;canceled=!1;transcript=[];pendingAborts=new Set;terminated=!1;hardAbort=new AbortController;cancel(){if(!this.terminated){if(this.currentStream=null,jt(`AgentLoop.cancel() invoked \u2013 currentStream=${!!this.currentStream} execAbortController=${!!this.execAbortController} generation=${this.generation}`),this.currentStream?.controller?.abort?.(),this.canceled=!0,this.execAbortController?.abort(),this.execAbortController=new AbortController,jt("AgentLoop.cancel(): execAbortController.abort() called"),this.pendingAborts.size===0)try{this.onLastResponseId("")}catch{}this.onLoading(!1),this.generation+=1,jt(`AgentLoop.cancel(): generation bumped to ${this.generation}`)}}terminate(){this.terminated||(this.terminated=!0,this.hardAbort.abort(),this.cancel())}sessionId;constructor({model:t,provider:r="openai",instructions:n,approvalPolicy:a,disableResponseStorage:i,config:o,onItem:c,onLoading:d,getCommandConfirmation:f,onLastResponseId:A,additionalWritableRoots:h}){this.model=t,this.provider=r,this.instructions=n,this.approvalPolicy=a,this.config=o??{model:t,instructions:n??""},this.additionalWritableRoots=h,this.onItem=c,this.onLoading=d,this.getCommandConfirmation=f,this.onLastResponseId=A,this.disableResponseStorage=i??!1,this.sessionId=OR()||Uke().replaceAll("-","");let S=rC,C=Zs(this.provider),b=Jc(this.provider);this.oai=new Ec({...C?{apiKey:C}:{},baseURL:b,defaultHeaders:{originator:xR,version:Op,session_id:this.sessionId,...dd?{"OpenAI-Organization":dd}:{},...pd?{"OpenAI-Project":pd}:{}},...S!==void 0?{timeout:S}:{}}),sC(this.sessionId),BR(this.model),this.hardAbort=new AbortController,this.hardAbort.signal.addEventListener("abort",()=>this.execAbortController?.abort(),{once:!0})}async handleFunctionCall(t){if(this.canceled)return[];let r=t.function!=null,n=r?t.function?.name:t.name,a=r?t.function?.arguments:t.arguments,i=t.call_id??t.id,o=jR(a??"{}");if(jt(`handleFunctionCall(): name=${n??"undefined"} callId=${i} args=${a}`),o==null)return[{type:"function_call_output",call_id:t.call_id,output:`invalid arguments: ${a}`}];let c={type:"function_call_output",call_id:i,output:"no function found"},d=[];if(n==="container.exec"||n==="shell"){let{outputText:f,metadata:A,additionalItems:h}=await $ne(o,this.config,this.approvalPolicy,this.additionalWritableRoots,this.getCommandConfirmation,this.execAbortController?.signal);c.output=JSON.stringify({output:f,metadata:A}),h&&d.push(...h)}return[c,...d]}async run(t,r=""){try{if(this.terminated)throw new Error("AgentLoop has been terminated");let n=Date.now(),a=++this.generation;this.canceled=!1,this.currentStream=null,this.execAbortController=new AbortController,jt(`AgentLoop.run(): new execAbortController created (${this.execAbortController.signal}) for generation ${this.generation}`);let i=this.disableResponseStorage?"":r,o=[];if(this.pendingAborts.size>0){for(let C of this.pendingAborts)o.push({type:"function_call_output",call_id:C,output:JSON.stringify({output:"aborted",metadata:{exit_code:1,duration_seconds:0}})});this.pendingAborts.clear()}let c=[],d=0,f=C=>{let b={...C};return delete b.duration_ms,delete b.id,delete b.status,b};this.disableResponseStorage?(d=this.transcript.length,this.transcript.push(...tB(t)),c=[...this.transcript,...o].map(f)):c=[...o,...t].map(f),this.onLoading(!0);let A=[],h=C=>{if(a!==this.generation||C.id&&Gse.has(C.id))return;Gse.add(C.id);let b=A.push(C)-1;setTimeout(()=>{if(a===this.generation&&!this.canceled&&!this.hardAbort.signal.aborted&&(this.onItem(C),A[b]=void 0,this.disableResponseStorage&&C.role!=="system")){if(C.type==="function_call"||C.type==="reasoning"||C.type==="message"&&C.role==="user")return;let I={...C};delete I.duration_ms,this.transcript.push(I)}},3)};for(;c.length>0;){if(this.canceled||this.hardAbort.signal.aborted){this.onLoading(!1);return}let C=this.disableResponseStorage?c.slice(d):[...c];for(let B of C)h(B);let b,w=8;for(let B=1;B<=w;B++)try{let U;this.model.startsWith("o")&&(U={effort:this.config.reasoningEffort??"high"},(this.model==="o3"||this.model==="o4-mini")&&(U.summary="auto"));let G=[Hse,this.instructions].filter(Boolean).join(`
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+
+Error: AgentLoop has been terminated
+    at dE.run (file:///usr/lib/node_modules/@openai/codex/dist/cli.js:490:4902)
+    at file:///usr/lib/node_modules/@openai/codex/dist/cli.js:559:3956
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+Node.js v22.14.0
